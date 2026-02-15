@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=Platypi:ital,wght@0,300..800;1,300..800&family=Inter:wght@400..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-brand-gold: #f59e0b;
+  --color-brand-surface: var(--bg-surface);
+  --color-brand-text: var(--text-primary);
+}
+
+:root {
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  line-height: 1.2;
+  font-weight: 400;
+
+  /* Default Light Mode Variables */
+  --bg-base: #f8fafc;
+  --bg-header: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-item: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --border-subtle: rgba(15, 23, 42, 0.05);
+  --shadow-color: rgba(0, 0, 0, 0.05);
+
+  color-scheme: light dark;
+  color: var(--text-primary);
+  background-color: var(--bg-base);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-base: #0a0a0a;
+    --bg-header: #000000;
+    --bg-surface: #111111;
+    --bg-item: #181818;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.4);
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-base);
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.font-display {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Tap Highlight Polish */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Button Micro-interactions */
+button:active {
+  transform: scale(0.97);
+  transition: transform 0.1s ease;
+}
+
+/* Glassmorphism for floating UI */
+.glass {
+  background: var(--bg-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+}
